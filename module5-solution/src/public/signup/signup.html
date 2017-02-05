@@ -1,0 +1,46 @@
+<div class="container">
+	<form name='signupForm' novalidate>
+		
+		<input type="text" name="firstname" placeholder="First Name" ng-model="reg.user.firstname" required>
+	          {{ reg.user.firstname }}
+	          <span
+	            ng-if="signupForm.firstname.$error.required && signupForm.firstname.$touched">
+	            First name is required
+	          </span>
+	          <br>
+	
+		<input type="text" name="lastname" placeholder="Last Name" ng-model="reg.user.lastname" required>
+	          {{ reg.user.lastname }}
+	          <span ng-if="signupForm.lastname.$error.required && signupForm.lastname.$touched">
+	            Last name is required
+	          </span>
+	          <br>
+	
+	    <input type="email" name="email" placeholder="Email"
+	          ng-model="reg.user.email"
+	          required>
+	          {{ reg.user.email }}
+	          <span ng-if="(signupForm.email.$error.required || signupForm.email.$invalid) && signupForm.email.$touched">
+	            Must be a valid email address: handle@domain format
+	          </span>
+	          <br>
+	
+		<input type="text" name="phone" placeholder="Phone ###-###-####"
+	          ng-model="reg.user.phone"
+	          pattern="(\d{3})-(\d{3})-(\d{4})">
+	          <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+	            Phone must be in the format ###-###-####.
+	          </span>
+	          <br>
+	
+		<input type="text" name="short_name" placeholder="Your favorite dish"
+	          ng-model="reg.user.short_name">
+	          <br>
+	
+		<button ng-disabled="signupForm.$invalid" ng-click="reg.submit()">Submit</button>
+	
+	    <div ng-if="reg.completed">
+	    	Your information has been saved
+	    </div>
+	</form>
+</div>

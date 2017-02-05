@@ -1,0 +1,25 @@
+<div class="container">
+	<div ng-if="myInfoCtrl.user === undefined">
+		<a ui-sref="public.signup" >Not Signed Up Yet. Sign up Now!</a>
+	</div>
+	<div ng-if="myInfoCtrl.user !== undefined" class="container">
+		<div>
+		First name: {{myInfoCtrl.user.firstname}}
+		</div>
+		<div>
+			Last name: {{myInfoCtrl.user.lastname}}
+		</div>
+		<div>
+			Email: {{myInfoCtrl.user.email}}
+		</div>
+		<div>
+			Phone: {{myInfoCtrl.user.phone}}
+		</div>
+		<div style="vertical-align: middle;">
+			<span style="display:inline-block;">Favorite dish: </span>
+			<menu-item menu-item="myInfoCtrl.favoriteItem" ng-if="myInfoCtrl.favoriteItem !== undefined" style="display:inline-block;" ></menu-item>
+			<span ng-if="myInfoCtrl.favoriteItem === undefined">No such menu number exists</span>
+		</div>
+	</div>
+	
+</div>
