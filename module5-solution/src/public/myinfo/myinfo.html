@@ -15,8 +15,8 @@
 		<div>
 			Phone: {{myInfoCtrl.user.phone}}
 		</div>
-		<div style="vertical-align: middle;">
-			<span style="display:inline-block;">Favorite dish: </span>
+		<div style="vertical-align: top;">
+			<span style="display:inline-block; vertical-align: top;">Favorite dish: </span>
 			<menu-item menu-item="myInfoCtrl.favoriteItem" ng-if="myInfoCtrl.favoriteItem !== undefined" style="display:inline-block;" ></menu-item>
 			<span ng-if="myInfoCtrl.favoriteItem === undefined">No such menu number exists</span>
 		</div>
